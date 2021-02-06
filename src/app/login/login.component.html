@@ -1,7 +1,19 @@
 <h1 >Login</h1>
-<br>Username <input type="text">
+<br>Username <input type="text" [(ngModel)]= name >
 <br>
-<br>Password <input type="text">
+<br>Password <input type="text" [(ngModel)]= password>
 <br>
-<button class='btn btn-primary'>Login</button><button routerLink='/register'>Register</button>
+<button (click)=submit()>Login</button><button routerLink='/register'>Register</button>
 
+<div *ngIf="isEmpty == 1" >
+    <p>Enter valid username or password</p>    
+</div>
+
+<div *ngIf="isUsername == 1">
+    <p>Enter valid username!!</p>
+</div>
+
+<div *ngIf="isPassword == 1">
+    <p>Enter valid password!!</p>
+
+</div>

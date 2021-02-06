@@ -9,8 +9,6 @@ export class AppComponent {
   name :string = 'Preeti'
   people : any={"name" : "Nisha",
                  "address" : "pune"}
-  
-  obj: personDetails = new personDetails("Maths");
   show :boolean = true
 
   hide(){
@@ -18,15 +16,6 @@ export class AppComponent {
     console.log(this.show)
   }
 }
-class personDetails {
-  subject : string ="Mathematics"
-  person : any[] =[
-    {"name" : "Nisha"},
-    {"name" : "Prajwal"}
-  ];
-  constructor(subject : string) {
-    this.subject = subject
-  }
-}
+
 
 
