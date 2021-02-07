@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,19 +12,33 @@ export class LoginComponent implements OnInit {
   isEmpty = 0
   isPassword =0
   isUsername = 0
-  constructor() { }
+  LoggedIn=0
+  constructor(private router:Router) {
+    
+   }
 
   ngOnInit(): void {
   }
   
   submit(){
-    if(this.name == "" && this.password == "")
-     this.isEmpty = 1
+    if(this.name=="admin" && this.password=="admin")
+    {
+      this.router.navigate(['/dashboard'])
+    }
+    else if(this.name == "" && this.password == "")
+    {
+      this.isUsername = 1
+      this.isPassword = 1
+    }
     else if (this.name == "")
+    {
      this.isUsername = 1
+    }
     else if (this.password == "")
-     this.isPassword = 1
-    
-     
+    {
+     this.isPassword = 1 
+    }
+
+
   }
 }
