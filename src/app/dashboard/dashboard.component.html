@@ -4,10 +4,12 @@ Dashboard
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Age</th>
+      <th>Edit/Delete/Add</th>
     </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let e of emp; let i=index">
+      <td>{{e.firstName}}</td>
+      <td>{{e.lastName}}</td>
+      <td>{{e.Age }}</td>
+      <td><button routerLink="['/edit-employee',e.i]">Edit</button><button>Delete</button><button>Add</button></td>
     </tr>
 </table>

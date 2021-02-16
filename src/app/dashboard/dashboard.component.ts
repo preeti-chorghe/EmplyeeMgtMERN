@@ -8,13 +8,11 @@ import { Employee } from "../utils/Employee";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
-  constructor() { 
-    
+  emp = Employee
+  constructor() {
   }
 
   ngOnInit(): void {
-    
   }
 
 }
